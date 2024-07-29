@@ -9,6 +9,7 @@ import sys
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
+print(module_path, sys.path)
 from lang_segment_anything import LangSAM
 
 # Save point cloud to obj file
