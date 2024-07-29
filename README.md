@@ -38,12 +38,12 @@ Depth Anything distinguishes between metric and relativ depth checkpoints. There
 # Relative Depth Checkpoints
 
 cd Depth-Anything-V2 && mkdir checkpoints
-cd checkpoints && wget https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true
+cd checkpoints && wget -O depth_anything_v2_vitl.pth https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true
 
 # Pre-trained Metric Depth Checkpoints
 
 cd Depth-Anything-V2/metric_depth && mkdir checkpoints
-cd checkpoints && wget https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true
+cd checkpoints && wget -O depth_anything_v2_metric_vkitti_vitl.pth https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true
 ```
 
 
@@ -51,9 +51,26 @@ cd checkpoints && wget https://huggingface.co/depth-anything/Depth-Anything-V2-M
 Repeat the installation process for Language Segment Anything:
 ```
 git clone https://github.com/luca-medeiros/lang-segment-anything && cd lang-segment-anything
-pip install torch torchvision
 pip install -e .
 ```
+
+If the last command throws a pip dependency issue, ignore it. One possible solution lies in installing GroundingDINO manually:
+
+```
+git clone https://github.com/IDEA-Research/GroundingDINO.git
+cd GroundingDINO/
+pip install -e .
+```
+Once again, ignore any error messages. 
+Download pre-trained model weights:
+```
+mkdir weights
+cd weights
+wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
+cd ..
+```
+
+
 
 ### KISS-ICP
 Installation of KISS-ICP can be done with
