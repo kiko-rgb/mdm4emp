@@ -22,3 +22,4 @@ correspond/__pycache__/
 *.vscode/
 *.
 
+afm_kiss_icp/__pycache__/AFMOdometryPipeline.cpython-310.pyc
