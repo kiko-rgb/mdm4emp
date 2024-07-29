@@ -12,8 +12,12 @@ git clone https://github.com/kiko-rgb/mdm4emp.git && cd mdm4emp
 We recommend Conda to create an environment from the `environment.yml` file:
 ```
 conda env create -f environment.yml
+conda activate afm_mdm4emp
+
+# optional: verify correct installation of environment
+conda env list
 ```
-### Installing Required Models
+### Installation of (Foundation) Models
 First of all, the following models have to be installed:
 - Depth Anything v2
 - Language Segment-Anything
@@ -33,13 +37,13 @@ Depth Anything distinguishes between metric and relativ depth checkpoints. There
 ```
 # Relative Depth Checkpoints
 
-cd Depth-Anything-V2/checkpoints
-curl -O https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true
+cd Depth-Anything-V2 && mkdir checkpoints
+cd checkpoints && wget https://huggingface.co/depth-anything/Depth-Anything-V2-Large/resolve/main/depth_anything_v2_vitl.pth?download=true
 
-# Metric Depth Checkpoints
+# Pre-trained Metric Depth Checkpoints
 
-cd Depth-Anything-V2/metric_depth/checkpoints
-curl -O https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true
+cd Depth-Anything-V2/metric_depth && mkdir checkpoints
+cd checkpoints && wget https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/resolve/main/depth_anything_v2_metric_vkitti_vitl.pth?download=true
 ```
 
 
@@ -71,7 +75,7 @@ project/
 ├── lang_segment_anything/
 ├── SAM_checkpoints/
 ├── GroundingDINO/
-├── Depth_Anything_V2/           
+├── Depth-Anything-V2/           
     ├── checkpoints/
         ├── depth_anything_v2_vitl.pth   
     ├── metric_depth/

@@ -1,4 +1,4 @@
-name: afm
+name: afm_mdm4emp
 channels:
   - pytorch
   - nvidia
