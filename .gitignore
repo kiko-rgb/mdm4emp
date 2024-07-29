@@ -1,4 +1,5 @@
-__pycache__/
+datasets/__pycache__/
+correspond/__pycache__/
 *.pyc
 *.pyo
 *.pyd
@@ -20,3 +21,4 @@ __pycache__/
 *.vscode
 *.vscode/
 *.
+
