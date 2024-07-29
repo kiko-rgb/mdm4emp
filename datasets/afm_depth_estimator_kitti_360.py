@@ -4,6 +4,11 @@ import torch
 from datasets.afm_kitti_360 import AFMKITTI360Dataset
 from correspond.stereo_depth_alignment import stereo_depth_alignment, matching
 from PIL import Image
+import os
+import sys
+module_path = os.path.abspath(os.path.join('..'))
+if module_path not in sys.path:
+    sys.path.append(module_path)
 from lang_segment_anything import LangSAM
 
 # Save point cloud to obj file

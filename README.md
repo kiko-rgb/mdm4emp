@@ -94,6 +94,8 @@ python pipline.py
 
 Since two foundation models are run at the same time (Depth Anything and Lang-SAM), memory requirements are high. For testing purposes, it could be interesting to generate masks in a separate step as seen in `demos/generating_masks.py` 
 
+To facilitate imports, it is recommended to rename `Depth-Anything-V2` to `Depth_Anything_V2` and `lang-segment-anything` to `lang_segment_anything`. 
+
 ### Final Project Structure
 
 ```text
