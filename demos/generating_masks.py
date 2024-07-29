@@ -22,7 +22,7 @@ if parent_dir not in sys.path:
     sys.path.append(parent_dir)
 
 from PIL import Image
-from lang_sam import LangSAM
+from lang_segment_anything import LangSAM
 from mdmemp.datasets.afm_kitti_360 import AFMKITTI360Dataset
 
 """

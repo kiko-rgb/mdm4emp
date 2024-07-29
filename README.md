@@ -22,7 +22,8 @@ First of all, the following models have to be installed:
 - Depth Anything v2
 - Language Segment-Anything
 - KISS-ICP
-- GroundingDINO (as a prerequisite)
+- GroundingDINO
+- LightGlue
 
 
 ### Depth Anything v2
@@ -80,6 +81,21 @@ pip install kiss-icp
 
 After following these steps, the resulting structure should look like this:
 
+### LightGlue Feature Matching
+```
+git clone https://github.com/cvg/LightGlue.git && cd LightGlue
+python -m pip install -e .
+```
+## Launching the Pipeline
+Launching the pipeline can then be done with
+```
+python pipline.py
+```
+
+Since two foundation models are run at the same time (Depth Anything and Lang-SAM), memory requirements are high. For testing purposes, it could be interesting to generate masks in a separate step as seen in `demos/generating_masks.py` 
+
+### Final Project Structure
+
 ```text
 project/
 ├── mdm4emp/
@@ -92,19 +108,11 @@ project/
 ├── lang_segment_anything/
 ├── SAM_checkpoints/
 ├── GroundingDINO/
+├── LightGlue/
 ├── Depth-Anything-V2/           
     ├── checkpoints/
         ├── depth_anything_v2_vitl.pth   
     ├── metric_depth/
         ├── checkpoints/
             ├── depth_anything_v2_metric_vkitti_vitl.pth
-
 ```
-
-## Launching the Pipeline
-Launching the pipeline can then be done with
-```
-python pipline.py
-```
-
-Since two foundation models are run at the same time (Depth Anything and Lang-SAM), this step is quite memory intensive.

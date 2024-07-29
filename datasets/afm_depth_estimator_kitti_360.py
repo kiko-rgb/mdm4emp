@@ -4,7 +4,7 @@ import torch
 from datasets.afm_kitti_360 import AFMKITTI360Dataset
 from correspond.stereo_depth_alignment import stereo_depth_alignment, matching
 from PIL import Image
-from lang_sam import LangSAM
+from lang_segment_anything import LangSAM
 
 # Save point cloud to obj file
 def save_point_cloud_to_obj(points, filename, colors=None):
